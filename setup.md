@@ -43,3 +43,7 @@ pip freeze > requirements.txt
 ```shell
 pip install -r requirements.txt
 ```
+
+### 9. note python version
+- for running project on same version, mention python version on README.md
+- because, library versions are mentioned on requirements.txt. but python version is not mentioned
