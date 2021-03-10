@@ -31,7 +31,7 @@ Then, you can run django command by tool window
 
 ### 6. run server
 ```shell
-runserver
+python app/manage.py runserver
 ```
 
 ### 7. freeze libraries
