@@ -33,17 +33,3 @@ Then, you can run django command by tool window
 ```shell
 python app/manage.py runserver
 ```
-
-### 7. freeze libraries
-```shell
-pip freeze > requirements.txt
-```
-
-### 8. install libraries from requirements
-```shell
-pip install -r requirements.txt
-```
-
-### 9. note python version
-- for running project on same version, mention python version on README.md
-- because, library versions are mentioned on requirements.txt. but python version is not mentioned
