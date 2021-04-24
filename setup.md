@@ -33,3 +33,15 @@ Then, you can run django command by tool window
 ```shell
 python app/manage.py runserver
 ```
+
+### 7. add app
+
+```shell
+python manage.py startapp polls
+```
+
+### 8. migration
+When using some app, need to prepare some table. so, need migration.
+```shell
+python manage.py migrate
+```
