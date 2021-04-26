@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+    - ./data/db:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_DB=postgres
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+  sample:
+    build: .
+    environment:
+      - DJANGO_DATABASE_ENGINE=django.db.backends.postgresql
+      - DJANGO_DATABASE_NAME=postgres
+      - DJANGO_DATABASE_USER=postgres
+      - DJANGO_DATABASE_PASSWORD=postgres
+      - DJANGO_DATABASE_HOST=db
+      - DJANGO_DATABASE_PORT=5432
+      - DJANGO_ALLOWED_HOSTS=0.0.0.0
+      - DJANGO_ADMIN_NAME=admin2
+      - DJANGO_ADMIN_PASSWORD=admin
+      - DJANGO_ADMIN_EMAIL=admin@admin.com
+      - DJANGO_DEBUG=True
+    ports:
+    - "8000:8000"
+    volumes:
+    - .:/code
+    depends_on:
+      - db

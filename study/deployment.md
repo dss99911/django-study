@@ -6,4 +6,5 @@
 - https://www.youtube.com/watch?v=IoxHUrbiqUo
 ![img.png](img.png)
     - [Deploy by Docker](https://www.youtube.com/watch?v=nh1ynJGJuT8)
+    - [Compose and Django](https://docs.docker.com/samples/django/)
 
