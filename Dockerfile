@@ -33,14 +33,15 @@ COPY scripts /scripts
 
 RUN chmod +x /scripts/*
 
-RUN mkdir -p /vol/web/media
 RUN mkdir -p /vol/web/static
 
 RUN adduser -D user
 # -R recursively
 RUN chown -R user:user /vol
+
+USER user
 # only owner have all permission. other user have read permission.
 RUN chmod -R 755 /vol/web
-USER user
+
 
 ENTRYPOINT ["entrypoint.sh"]

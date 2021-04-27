@@ -19,13 +19,25 @@ services:
       - DJANGO_DATABASE_HOST=db
       - DJANGO_DATABASE_PORT=5432
       - DJANGO_ALLOWED_HOSTS=0.0.0.0
-      - DJANGO_ADMIN_NAME=admin2
+      - DJANGO_ADMIN_NAME=admin
       - DJANGO_ADMIN_PASSWORD=admin
       - DJANGO_ADMIN_EMAIL=admin@admin.com
-      - DJANGO_DEBUG=True
+      - DJANGO_DEBUG=False
+      - DJANGO_SECRET_KEY=samplescretkey1@321
+      - DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
     ports:
       - "8000:8000"
     volumes:
-      - .:/code
+      - static_data:/vol/web/static
     depends_on:
       - db
+  proxy:
+    build: ./proxy
+    volumes:
+      - static_data:/vol/static
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sample
+volumes:
+  static_data:
