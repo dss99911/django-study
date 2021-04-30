@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.8-alpine as django-study
 
 # Setting PYTHONUNBUFFERED to a non empty value ensures that the python output is sent straight to terminal (e.g. your container log) without being first buffered and that you can see the output of your application (e.g. django logs) in real time.
 ENV PYTHONUNBUFFERED=1
